@@ -9,7 +9,7 @@ import user.userRepository;
 
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.example.api1", "user", " item", "cart"})
+@ComponentScan(basePackages = {"user", " item", "cart"})
 @EnableMongoRepositories(basePackages = {"user", "item", "cart"})
 public class Api1Application {
 

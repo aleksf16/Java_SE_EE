@@ -6,14 +6,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class cart {
 
+
+
     @Id
     private String id;
 
     private String userId;
-    private String userName;
-    private String userSurname;
-    private String age;
-
 
 
     private String[] itemsId;
@@ -46,7 +44,7 @@ public class cart {
         this.count = count;
     }
 
-    public void setItemId(String[] itemId) {
+    public void setItemsId(String[] itemId) {
         this.itemsId = itemId;
     }
 

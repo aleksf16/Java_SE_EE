@@ -1,10 +1,10 @@
-package item;
+package com.example.api1.item;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class item {
+public class Item {
 
     @Id
     private String id;

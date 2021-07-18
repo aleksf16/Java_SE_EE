@@ -1,10 +1,10 @@
-package user;
+package com.example.api1.user;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class user {
+public class User {
     @Id
     private String id;
 

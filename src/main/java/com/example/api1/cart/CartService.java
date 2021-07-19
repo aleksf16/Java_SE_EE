@@ -38,17 +38,15 @@ public class CartService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("Несуществующий Id " + userId));
 
-        cart.setUserName(user.getName());
-        cart.setUserSurname(user.getSurname());
-
         List<Item> items;
 
-        items = itemService.findItemByCartID(cartId);
+        items = itemService.findItemsByCartID(cartId);
 
         for (Item item : items) {
             count += item.getPrice();
         }
-        CartDTO cartDTO = CartConverter.convertModelToDTO(cart, items);
+        CartDTO cartDTO = CartConverter.convertModelToDTO(cart, items,user.getName(),user.getSurname());
+
         cartDTO.setCount(count);
         return cartDTO;
     }
@@ -58,7 +56,6 @@ public class CartService {
 
         List<Cart> carts = cartRepository.findAll();
 
-
         for (Cart cart : carts) {
             int count = 0;
 
@@ -67,11 +64,8 @@ public class CartService {
             User user = userRepository.findById(userId)
                     .orElseThrow(() -> new RuntimeException("Несуществующий Id " + userId));
 
-            cart.setUserName(user.getName());
-            cart.setUserSurname(user.getSurname());
-
-            List<Item> items = itemService.findItemByCartID(cart.getId());
-            CartDTO cartDTO = CartConverter.convertModelToDTO(cart, items);
+            List<Item> items = itemService.findItemsByCartID(cart.getId());
+            CartDTO cartDTO = CartConverter.convertModelToDTO(cart, items,user.getName(),user.getSurname());
 
             for (Item item : items) {
                 count += item.getPrice();

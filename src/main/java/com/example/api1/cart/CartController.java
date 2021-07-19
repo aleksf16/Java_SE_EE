@@ -25,13 +25,11 @@ public class CartController {
 
     @PostMapping("carts")
     public void addCart(@RequestBody final List<Cart> cart) {
-
         cartRepository.saveAll(cart);
     }
 
     @GetMapping("carts")
     public List<CartDTO> findCarts() {
-
         return cartService.findAll();
     }
 

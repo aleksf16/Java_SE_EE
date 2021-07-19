@@ -14,8 +14,6 @@ public class Cart {
     private String id;
 
     private String userId;
-    private String userName;
-    private String userSurname;
 
     private String[] itemsId;
 
@@ -24,13 +22,6 @@ public class Cart {
 
     public String[] getItemsId() { return itemsId; }
 
-    public String getUserSurname() {
-        return userSurname;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
 
     public String getUserId() {
         return userId;
@@ -42,14 +33,6 @@ public class Cart {
 
     public int getCount() {
         return count;
-    }
-
-    public void setUserSurname(String userSurname) {
-        this.userSurname = userSurname;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public void setItemsId(String[] itemsId) { this.itemsId = itemsId;}

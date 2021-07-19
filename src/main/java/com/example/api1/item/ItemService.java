@@ -23,7 +23,7 @@ public class ItemService {
     private CartRepository cartRepository;
 
 
-    public List<Item> findItemByCartID(String cartId)
+    public List<Item> findItemsByCartID(String cartId)
     {
 
         List<Item> items = new ArrayList<>();

@@ -6,12 +6,11 @@ import java.util.List;
 
 public class CartConverter {
 
-    public static CartDTO convertModelToDTO(Cart cart , List<Item> items) {
-
+    public static CartDTO convertModelToDTO(Cart cart , List<Item> items, String userName, String userSurname) {
         return new CartDTO(cart.getId(),
                 cart.getUserId(),
-                cart.getUserName(),
-                cart.getUserSurname(),
+                userName,
+                userSurname,
                 items,
                 cart.getCount());
     }

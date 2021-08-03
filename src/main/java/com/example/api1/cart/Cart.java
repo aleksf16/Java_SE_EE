@@ -1,10 +1,7 @@
 package com.example.api1.cart;
 
-import com.example.api1.item.Item;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.util.List;
 
 @Document
 public class Cart {

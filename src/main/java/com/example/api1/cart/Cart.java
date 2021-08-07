@@ -6,7 +6,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Cart {
 
-
     @Id
     private String id;
 

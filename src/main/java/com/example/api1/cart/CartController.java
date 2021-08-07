@@ -22,7 +22,6 @@ public class CartController {
     @Autowired
     private ItemRepository itemRepository;
 
-
     @PostMapping("carts")
     public void addCart(@RequestBody final List<Cart> cart) {
         cartRepository.saveAll(cart);

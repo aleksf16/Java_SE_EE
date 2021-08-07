@@ -1,7 +1,6 @@
 package com.example.api1.Authentification;
 
 import com.example.api1.user.User;
-import com.example.api1.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

@@ -17,6 +17,7 @@ public class User {
     @JsonIgnore
     @JsonProperty
     private String password;
+    @JsonIgnore
     private String username;
 
     @JsonIgnore
@@ -26,6 +27,7 @@ public class User {
         this.username = username;
     }
 
+    @JsonIgnore
     public String getUsername() {
         return username;
     }

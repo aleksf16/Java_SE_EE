@@ -20,7 +20,6 @@ import static io.jsonwebtoken.lang.Strings.hasText;
 public class JWTFilter extends GenericFilterBean {
     public static final String AUTHORIZATION = "Authorization";
 
-
     private final JwtProvider jwtProvider;
     private final UserDetailsService detailsService;
 

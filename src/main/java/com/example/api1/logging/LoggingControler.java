@@ -10,9 +10,8 @@ public class LoggingControler {
 
     Logger logger = LoggerFactory.getLogger(LoggingControler.class);
 
-    @RequestMapping("/")
+    @RequestMapping("/log")
     public void index(){
-
         logger.trace("A TRACE message");
         logger.debug("A DEBUG message");
         logger.info("An INFO message");

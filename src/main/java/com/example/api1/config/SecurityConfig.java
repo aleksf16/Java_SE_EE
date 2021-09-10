@@ -25,12 +25,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.httpBasic().disable().csrf().disable()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+                .authorizeRequests()
+                .antMatchers("/").permitAll()
+                .antMatchers("/users/**").hasRole("READER")
+                .antMatchers("/carts/**").hasRole("READER")
+                .antMatchers("/items/**").hasRole("READER")
+                .and()
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
         http.authorizeRequests()
                 .mvcMatchers("/users/**").authenticated()
                 .mvcMatchers("/carts/**").authenticated()
                 .mvcMatchers("/items/**").authenticated()
                 .mvcMatchers("/me/role").authenticated()
+                .antMatchers("/auth").permitAll()
                 //.mvcMatchers("/swagger-ui.html#/").permitAll()
                 .and().oauth2Login()
                 .and().logout()
